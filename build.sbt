@@ -2,7 +2,7 @@ import ReleaseTransformations._
 
 lazy val commonSettings = Seq(
   organization := "com.github.jeroenr",
-  scalaVersion := "2.11.7",
+  scalaVersion := "2.12.1",
   scalacOptions := Seq(
     "-deprecation",
     "-encoding", "UTF-8", // yes, this is 2 args

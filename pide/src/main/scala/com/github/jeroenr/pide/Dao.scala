@@ -3,8 +3,8 @@ package com.github.jeroenr.pide
 import akka.actor.ActorRef
 import akka.stream.scaladsl.Source
 import akka.util.Timeout
+import com.github.jeroenr.bson.BsonDocument
 import com.github.jeroenr.bson.BsonDsl._
-import com.github.jeroenr.bson.{BsonDocument, BsonDsl}
 import com.github.jeroenr.tepkin.MongoCollection
 import com.github.jeroenr.tepkin.protocol.WriteConcern
 import com.github.jeroenr.tepkin.protocol.result.{InsertResult, UpdateResult}

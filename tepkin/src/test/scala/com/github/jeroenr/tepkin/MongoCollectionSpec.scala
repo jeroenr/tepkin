@@ -3,12 +3,11 @@ package com.github.jeroenr.tepkin
 import akka.stream.ActorMaterializer
 import akka.stream.scaladsl.Source
 import akka.util.Timeout
+import com.github.jeroenr.bson.BsonDocument
 import com.github.jeroenr.bson.BsonDsl._
 import com.github.jeroenr.bson.Implicits._
-import com.github.jeroenr.bson.{BsonDocument, BsonDsl, Implicits}
 import com.github.jeroenr.tepkin.protocol.command.Index
 import com.github.jeroenr.tepkin.protocol.exception.{OperationException, WriteException}
-import com.github.simplyscala.{MongodProps, MongoEmbedDatabase}
 import org.scalatest._
 import org.scalatest.concurrent.ScalaFutures
 

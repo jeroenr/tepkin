@@ -7,12 +7,12 @@ import akka.actor.ActorRef
 import akka.stream.Materializer
 import akka.stream.scaladsl.{FileIO, Source}
 import akka.util.{ByteString, Timeout}
+import com.github.jeroenr.bson.BsonDocument
 import com.github.jeroenr.bson.BsonDsl._
 import com.github.jeroenr.bson.Implicits._
 import com.github.jeroenr.bson.element.BinarySubtype.Generic
-import com.github.jeroenr.bson.element.{BinarySubtype, BsonObjectId}
+import com.github.jeroenr.bson.element.BsonObjectId
 import com.github.jeroenr.bson.util.Converters
-import com.github.jeroenr.bson.{BsonDocument, BsonDsl, Implicits}
 import com.github.jeroenr.tepkin.GridFs.Chunk
 import com.github.jeroenr.tepkin.protocol.command.Index
 import com.github.jeroenr.tepkin.protocol.result.DeleteResult
@@ -36,7 +36,7 @@ class GridFs(db: MongoDatabase, prefix: String = "fs") {
     val fileId = BsonObjectId.generate
     val zero = (0, MessageDigest.getInstance("MD5"))
 
-    FileIO.fromFile(file, chunkSize).runFold(zero) { case ((n, md), data) =>
+    FileIO.fromPath(file.toPath, chunkSize).runFold(zero) { case ((n, md), data) =>
       md.update(data.asByteBuffer)
       val chunk = Chunk(fileId = fileId, n = n, data = BsonValueBinary(data, Generic))
       chunks.insert(chunk.toDoc)

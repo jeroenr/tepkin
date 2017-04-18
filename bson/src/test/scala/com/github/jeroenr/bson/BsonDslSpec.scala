@@ -1,7 +1,7 @@
 package com.github.jeroenr.bson
 
-import BsonDsl._
-import com.github.jeroenr.bson.Implicits.{BsonValueArray, BsonValueString}
+import com.github.jeroenr.bson.BsonDsl._
+import com.github.jeroenr.bson.Implicits.BsonValueString
 import org.scalatest.{Matchers, WordSpec}
 
 class BsonDslSpec extends WordSpec with Matchers {
