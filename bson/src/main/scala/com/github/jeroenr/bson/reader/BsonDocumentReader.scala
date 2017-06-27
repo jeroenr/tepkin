@@ -28,7 +28,7 @@ object BsonDocumentReader extends Reader[BsonDocument] {
 
   override def read(buffer: ByteBuffer): Option[BsonDocument] = {
     val elements: ArrayBuffer[Option[BsonElement]] = new ArrayBuffer[Option[BsonElement]]
-    val size = buffer.getInt()
+    buffer.getInt()
 
     breakable {
       while (buffer.hasRemaining) {

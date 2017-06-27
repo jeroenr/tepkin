@@ -9,6 +9,8 @@ import com.github.jeroenr.bson.BsonDocument
 import com.github.jeroenr.tepkin.TepkinMessage.{CursorClosed, CursorOpened, Fetch}
 import com.github.jeroenr.tepkin.protocol.message.{GetMoreMessage, KillCursorsMessage, Message, Reply}
 
+import scala.util.{Failure, Success}
+
 /**
  * Represents a cursor to read data from Mongo. This actor is an ActorPublisher so it can be passed directly to a
  * `akka.stream.scaladsl.Source`
@@ -31,8 +33,9 @@ class MongoCursor(pool: ActorRef,
 
   import context.dispatcher
 
-  pool.?(message)(timeout).pipeTo(self).onFailure {
-    case cause: Throwable => onErrorThenStop(cause)
+  pool.?(message)(timeout).pipeTo(self).onComplete {
+    case Failure(cause) => onErrorThenStop(cause)
+    case Success(_) => ()
   }
 
   override def receive: Receive = {

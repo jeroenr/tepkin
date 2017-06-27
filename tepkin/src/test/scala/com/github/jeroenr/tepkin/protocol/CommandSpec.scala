@@ -3,8 +3,8 @@ package com.github.jeroenr.tepkin.protocol
 import java.nio.ByteOrder
 
 import akka.util.ByteString
+import com.github.jeroenr.bson.BsonDocument
 import com.github.jeroenr.bson.BsonDsl._
-import com.github.jeroenr.bson.{BsonDocument, BsonDsl}
 import com.github.jeroenr.tepkin.protocol.command._
 import org.scalatest.{FlatSpec, Matchers}
 

@@ -30,15 +30,15 @@ object MongoClientUriParser extends RegexParsers {
   }
 
   def credentials: Parser[MongoCredentials] = credential ~ opt(":" ~ credential) ^^ {
-    case username ~ None =>
-      MongoCredentials(username = username)
     case username ~ Some(":" ~ password) =>
       MongoCredentials(username = username, password = Some(password))
+    case username ~ _ =>
+      MongoCredentials(username = username)
   }
 
   def host: Parser[InetSocketAddress] = hostName ~ opt(":" ~ port) ^^ {
-    case hostName ~ None => new InetSocketAddress(hostName, 27017)
     case hostName ~ Some(":" ~ port) => new InetSocketAddress(hostName, port)
+    case hostName ~ _ => new InetSocketAddress(hostName, 27017)
   }
 
   def uri: Parser[MongoClientUri] = {

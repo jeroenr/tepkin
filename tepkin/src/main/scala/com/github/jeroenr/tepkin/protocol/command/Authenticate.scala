@@ -1,9 +1,8 @@
 package com.github.jeroenr.tepkin.protocol.command
 
+import com.github.jeroenr.bson.BsonDocument
 import com.github.jeroenr.bson.BsonDsl._
-import com.github.jeroenr.bson.util.Converters
 import com.github.jeroenr.bson.util.Converters.md5Hex
-import com.github.jeroenr.bson.{BsonDocument, BsonDsl}
 
 case class Authenticate(databaseName: String,
                         username: String,

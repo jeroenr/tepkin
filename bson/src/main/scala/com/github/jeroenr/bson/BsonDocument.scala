@@ -2,9 +2,7 @@ package com.github.jeroenr.bson
 
 import akka.util.{ByteString, ByteStringBuilder}
 import com.github.jeroenr.bson.BsonDsl._
-import com.github.jeroenr.bson.element.{BsonNullValue, BsonNull, BsonElement, BsonObject}
-
-import language.postfixOps
+import com.github.jeroenr.bson.element.{BsonElement, BsonNullValue, BsonObject}
 
 case class BsonDocument(private val elems: BsonElement*) extends BsonValue {
 

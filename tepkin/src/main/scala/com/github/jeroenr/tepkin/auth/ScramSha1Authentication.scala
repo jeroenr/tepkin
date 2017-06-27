@@ -7,7 +7,7 @@ import com.github.jeroenr.bson.BsonDsl._
 import com.github.jeroenr.bson.Implicits._
 import com.github.jeroenr.bson.element.BinarySubtype
 import com.github.jeroenr.bson.util.Converters
-import com.github.jeroenr.bson.{BsonDocument, BsonDsl, BsonValueNumber, Implicits}
+import com.github.jeroenr.bson.{BsonDocument, BsonValueNumber}
 import com.github.jeroenr.tepkin.MongoCredentials
 import com.github.jeroenr.tepkin.protocol.command.Command
 import com.github.jeroenr.tepkin.protocol.message.Reply

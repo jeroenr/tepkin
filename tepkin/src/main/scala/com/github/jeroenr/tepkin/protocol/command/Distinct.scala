@@ -1,7 +1,7 @@
 package com.github.jeroenr.tepkin.protocol.command
 
+import com.github.jeroenr.bson.BsonDocument
 import com.github.jeroenr.bson.BsonDsl._
-import com.github.jeroenr.bson.{BsonDocument, BsonDsl}
 
 /**
  * Finds the distinct values for a specified field across a single collection.

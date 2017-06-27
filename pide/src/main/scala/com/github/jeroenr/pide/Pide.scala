@@ -1,7 +1,7 @@
 package com.github.jeroenr.pide
 
 import com.github.jeroenr.bson.Implicits._
-import com.github.jeroenr.bson.{BsonDocument, BsonValue, Implicits}
+import com.github.jeroenr.bson.{BsonDocument, BsonValue}
 
 trait Pide[ID, E <: Entity[ID]] {
 

@@ -1,7 +1,7 @@
 package com.github.jeroenr.tepkin.protocol.result
 
 import com.github.jeroenr.bson.Implicits.BsonValueArray
-import com.github.jeroenr.bson.{BsonDocument, BsonValue, BsonValueNumber, Implicits}
+import com.github.jeroenr.bson.{BsonDocument, BsonValue, BsonValueNumber}
 
 case class DistinctResult(ok: Boolean,
                           values: Seq[BsonValue],

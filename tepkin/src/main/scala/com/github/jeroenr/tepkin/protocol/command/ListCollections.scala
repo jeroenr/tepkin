@@ -1,7 +1,7 @@
 package com.github.jeroenr.tepkin.protocol.command
 
+import com.github.jeroenr.bson.BsonDocument
 import com.github.jeroenr.bson.BsonDsl._
-import com.github.jeroenr.bson.{BsonDocument, BsonDsl}
 
 /**
  * Retrieve information, i.e. the name and options, about the collections in a database.

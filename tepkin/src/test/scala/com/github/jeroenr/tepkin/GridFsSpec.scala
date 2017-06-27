@@ -8,8 +8,7 @@ import akka.util.Timeout
 import com.github.jeroenr.bson.BsonDsl._
 import com.github.jeroenr.bson.Implicits._
 import com.github.jeroenr.bson.util.Converters
-import com.github.jeroenr.bson.{BsonDsl, Implicits}
-import com.github.simplyscala.{MongodProps, MongoEmbedDatabase}
+import com.github.simplyscala.MongoEmbedDatabase
 import org.scalatest._
 import org.scalatest.concurrent.ScalaFutures
 
